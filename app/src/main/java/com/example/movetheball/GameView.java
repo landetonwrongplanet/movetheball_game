@@ -19,6 +19,10 @@ public class GameView extends SurfaceView implements Runnable {
     private int ballGlowRadius;
     private int ballGlowColor;
     private boolean[] cornerTouched;
+    private int cornerX;
+    private int cornerY;
+    private int cornerRadius;
+
 
     public GameView(Context context) {
         super(context);
@@ -54,7 +58,7 @@ public class GameView extends SurfaceView implements Runnable {
                     }else{
                         paint.setColor(Color.RED);
                     }
-                    canvas.drawCircle(CornerX[i], cornerY[i], cornerRadius);
+                    canvas.drawCircle(cornerX,cornerY, cornerRadius, paint);
                 }
 
             }
