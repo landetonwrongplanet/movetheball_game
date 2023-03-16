@@ -1,12 +1,14 @@
 package com.example.movetheball;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SensorGameActivity extends AppCompatActivity implements SensorEventListener {
-    private SensorManager sensormanager;
+    private SensorManager sensorManager;
     private Sensor accelerometer;
     private GameView gameView;
     private int screenWidth;
@@ -19,7 +21,15 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private boolean cornerTouched;
     private int numCornersTouched;
 
-    protected void onCreate(){}
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        gameView = new GameView(this);
+        setContentView(gameView);
+
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    }
     protected void onResume() {
         super.onResume();
     }
