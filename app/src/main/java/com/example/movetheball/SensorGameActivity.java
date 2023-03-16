@@ -29,6 +29,12 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        cornerRadius = 100;
+        cornerMargin = 200;
+        cornerPadding = 20;
+        cornerX= new int {}
+
     }
     protected void onResume() {
         super.onResume();
