@@ -65,4 +65,7 @@ public class GameView extends SurfaceView implements Runnable {
         }
 
     }
+
+    public void update(float value, float value1) {
+    }
 }

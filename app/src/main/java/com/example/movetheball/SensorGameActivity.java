@@ -1,10 +1,13 @@
 package com.example.movetheball;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,12 +58,22 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
 
     public void onSensorChanged(SensorEvent event){
 
-        gameView.update()
+        gameView.update(event.values[0], event.values[1]);
 
     }
     public boolean onTouchEvent(){}
 
-    private void stopGame(){}
+    private void stopGame(){
+        gameRunning = false;
+        if(timer != null) {
+            timer.cancel();
+            timer = null;
+
+        }
+        takeScreenshot();
+
+        Toast.makeText(getContext(), "Game Over. You touched " + numCornersTouched + "corners");
+    }
 
     private void takeScreenshot(){
 
