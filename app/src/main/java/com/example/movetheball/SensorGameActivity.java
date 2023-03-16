@@ -19,4 +19,20 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private boolean cornerTouched;
     private int numCornersTouched;
 
+    protected void onCreate(){}
+    protected void onResume(){}
+
+    protected void onPause(){}
+
+    public void onSensorChanged(){
+
+    }
+    public boolean onTouchEvent(){}
+
+    private void stopGame(){}
+
+    private void takeScreenshot(){
+
+    }
+
 }
