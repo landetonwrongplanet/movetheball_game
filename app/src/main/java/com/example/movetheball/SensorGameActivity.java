@@ -20,9 +20,13 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private int numCornersTouched;
 
     protected void onCreate(){}
-    protected void onResume(){}
+    protected void onResume() {
+        super.onResume();
+    }
 
-    protected void onPause(){}
+    protected void onPause() {
+        super.onPause();
+    }
 
     public void onSensorChanged(){
 
