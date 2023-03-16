@@ -44,7 +44,9 @@ public class GameView extends SurfaceView implements Runnable {
                 paint.setAlpha(255);
                 canvas.drawCircle(ballX, ballY, ballRadius, paint);
 
-
+                paint.setColor(Color.RED);
+                paint.setStyle(Paint.Style.STROKE);
+                paint.setStrokeWidth(10);
 
 
             }
