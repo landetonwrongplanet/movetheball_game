@@ -19,7 +19,7 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private int cornerPadding;
     private int[] cornerX;
     private int[] cornerY;
-    private boolean cornerTouched;
+
     private int numCornersTouched;
 
     protected void onCreate(Bundle savedInstanceState) {
