@@ -16,8 +16,8 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private int cornerRadius;
     private int cornerMargin;
     private int cornerPadding;
-    private int cornerX;
-    private int cornerY;
+    private int[] cornerX;
+    private int[] cornerY;
     private boolean cornerTouched;
     private int numCornersTouched;
 
@@ -33,7 +33,8 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         cornerRadius = 100;
         cornerMargin = 200;
         cornerPadding = 20;
-        cornerX= new int {}
+        cornerX = new int[] {cornerRadius + cornerMargin, screenWidth - cornerPadding};
+        cornerY = new int[] {cornerRadius + cornerMargin, cornerRadius + cornerPadding};
 
     }
     protected void onResume() {
