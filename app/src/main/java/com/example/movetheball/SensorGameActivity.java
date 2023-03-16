@@ -17,4 +17,6 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private int cornerX;
     private int cornerY;
     private boolean cornerTouched;
+    private int numCornersTouched;
+
 }

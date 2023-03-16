@@ -19,4 +19,7 @@ public class GameView extends SurfaceView implements Runnable {
     public GameView(Context context) {
         super(context);
     }
+    public void run(){
+
+    }
 }
