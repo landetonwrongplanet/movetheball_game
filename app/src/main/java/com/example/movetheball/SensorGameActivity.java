@@ -2,6 +2,7 @@ package com.example.movetheball;
 
 import android.content.Context;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 
@@ -52,7 +53,9 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         sensorManager.unregisterListener(this);
     }
 
-    public void onSensorChanged(){
+    public void onSensorChanged(SensorEvent event){
+
+        gameView.update()
 
     }
     public boolean onTouchEvent(){}
