@@ -50,14 +50,14 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener((android.hardware.SensorEventListener) this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Override
 
     protected void onPause() {
         super.onPause();
-        sensorManager.unregisterListener(this);
+        sensorManager.unregisterListener((android.hardware.SensorEventListener) this);
     }
 
     public void onSensorChanged(SensorEvent event){
@@ -70,8 +70,10 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     private void stopGame(){
         boolean gameRunning = false;
         boolean timer = false;
+
         if(timer != false) {
             timer.cancel();
+            timer.purge();
             timer = false;
 
         }
