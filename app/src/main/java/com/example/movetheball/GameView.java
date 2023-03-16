@@ -1,6 +1,7 @@
 package com.example.movetheball;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.SurfaceHolder;
@@ -27,7 +28,17 @@ public class GameView extends SurfaceView implements Runnable {
         ballGlowRadius = 11;
         ballGlowColor = Color.YELLOW;
     }
+
+    @Override
     public void run(){
+        while(isRunning){
+            if (surfaceHolder.getSurface().isValid()){
+                Canvas canvas = surfaceHolder.lockCanvas();
+                canvas.drawColor(Color.WHITE);
+
+
+            }
+        }
 
     }
 }
