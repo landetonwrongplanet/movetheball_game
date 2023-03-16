@@ -37,12 +37,19 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         cornerY = new int[] {cornerRadius + cornerMargin, cornerRadius + cornerPadding};
 
     }
+
+
+    @Override
     protected void onResume() {
         super.onResume();
+        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
     }
+
+    @Override
 
     protected void onPause() {
         super.onPause();
+        sensorManager.unregisterListener(this);
     }
 
     public void onSensorChanged(){
