@@ -7,9 +7,13 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class SensorGameActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
@@ -64,10 +68,11 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     public boolean onTouchEvent(){}
 
     private void stopGame(){
-        gameRunning = false;
-        if(timer != null) {
+        boolean gameRunning = false;
+        boolean timer = false;
+        if(timer != false) {
             timer.cancel();
-            timer = null;
+            timer = false;
 
         }
         takeScreenshot();
@@ -76,6 +81,11 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     }
 
     private void takeScreenshot(){
+
+        String timestamp = new SimpleDateFormat("HHmmddMMyyyy").format(new Date());
+        String filename = "Screenshot_" + timestamp + ".png";
+
+        DisplayMetrics metrics =new DisplayMetrics();
 
     }
 

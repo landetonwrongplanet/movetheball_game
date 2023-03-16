@@ -34,7 +34,6 @@ public class GameView extends SurfaceView implements Runnable {
         ballGlowColor = Color.YELLOW;
     }
 
-    @Override
     public void run(){
         while(isRunning){
             if (surfaceHolder.getSurface().isValid()){
