@@ -80,7 +80,7 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         }
         takeScreenshot();
 
-        Toast.makeText().getContext("Game Over. You touched " + numCornersTouched + "corners");
+        Toast.makeText(getApplicationContext(),"Game Over. You touched " , numCornersTouched);
     }
 
     private void takeScreenshot(){
