@@ -8,10 +8,11 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.Toast;
-
+import java.util.Timer;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.security.AccessController;
+import com.example.view.GameView;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,6 +30,12 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
 
     private int numCornersTouched;
 
+    private int corner1;
+    private int corner2;
+    private int corner3;
+    private int corner4;
+
+    private Timer timer;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -50,6 +57,7 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     @Override
     protected void onResume() {
         super.onResume();
+
         sensorManager.registerListener((android.hardware.SensorEventListener) this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
     }
 
@@ -65,17 +73,23 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         gameView.update(event.values[0], event.values[1]);
 
     }
-    public boolean onTouchEvent(){}
+    // public boolean onTouchEvent(MotionEvent event){
+       // if(event.getAction() == MotionEvent.ACTION_DOWN){
+
+
+      //  }
+
+    //}
 
     @SuppressLint("DefaultLocale")
-    private void stopGame(){
-        boolean gameRunning = false;
-        boolean timer = false;
+    private void stopGame(boolean gameRunning){
+     gameRunning = false;
 
-        if(timer != false) {
+
+        if(timer != null) {
             timer.cancel();
             timer.purge();
-            timer = false;
+            timer = null;
 
         }
         takeScreenshot();

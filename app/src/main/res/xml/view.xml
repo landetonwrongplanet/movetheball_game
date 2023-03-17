@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelateLayout xmlns:android ="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android ="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <SurfacView
@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/cornerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
     <ImageView
         android:id="@+id/corner1"
         android:layout_width="wrap_content"
@@ -50,4 +50,5 @@
         android:layout_margin ="200dp"
         android:padding = "20dp"
         android:visibility= "invisible"/>
-</RelateLayout>
+</RelativeLayout>
+</FrameLayout>

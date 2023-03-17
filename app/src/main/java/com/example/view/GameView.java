@@ -1,4 +1,4 @@
-package com.example.movetheball;
+package com.example.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.example.movetheball.Runnable;
 
 public class GameView extends SurfaceView implements Runnable {
     private SurfaceHolder surfaceHolder;
