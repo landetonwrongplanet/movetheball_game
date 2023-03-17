@@ -1,7 +1,6 @@
 package com.example.movetheball;
 
-import static java.security.AccessController.getContext;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.security.AccessController;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -67,6 +67,7 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
     }
     public boolean onTouchEvent(){}
 
+    @SuppressLint("DefaultLocale")
     private void stopGame(){
         boolean gameRunning = false;
         boolean timer = false;
@@ -79,7 +80,7 @@ public class SensorGameActivity extends AppCompatActivity implements SensorEvent
         }
         takeScreenshot();
 
-        Toast.makeText(getContext(), "Game Over. You touched " + numCornersTouched + "corners");
+        Toast.makeText().getContext("Game Over. You touched " + numCornersTouched + "corners");
     }
 
     private void takeScreenshot(){
